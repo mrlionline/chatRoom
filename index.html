@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>chat room</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div id="chatroom" class="onblur">
+		<!-- aside- -start -->
+		<div class="aside">
+			<ul class="left-nav">
+				<li>返回首页</li>
+				<li>在线用户</li>
+				<li>清空消息</li>
+			</ul>
+		</div>
+		<!-- aside- -end -->
+
+		<!-- userList- -start -->
+		<div class="onlineList">
+			<p class="onlineNum">当前在线人数：<span class="number"></span></p>
+			<ul class="onlineUser">
+				<div class="clear">
+					
+				</div>
+			</ul>
+		</div>
+		<!-- userList- -end -->
+
+		<!-- Msg- -start -->
+		<div class="msgBox">
+			<div class="welcome">欢迎加入聊天室，请文明发言</div>
+			<div class="msgShow">
+				
+			</div>
+			<div class="msgInput">
+				<textarea placeholder="消息不能为空..." id="msgText" maxlength="150"></textarea>
+				<button id="msgSend">发 送</button>
+			</div>
+		</div>
+		<!-- Msg- -end -->
+
+		<!-- newMsgList- -start -->
+		<div class="newMsgList">
+			<ul>
+				<li>未读消息：<span class="msgNum">11</span>条</li>
+				
+			</ul>
+		</div>
+		<!-- newMsgList- -end -->
+	</div>
+
+	<!-- mask- -start -->
+	<div class="mask"></div>
+	<!-- mask- -end -->
+
+	<!-- login- -start -->
+	<div class="login">
+		<div class="loginHead">
+			<h2>登录聊天室</h2>
+		</div>
+		<div class="loginContent">
+			<div class="username">
+				<p>昵 称</p>
+				<input placeholder="请输入昵称" type="text" id="userNameInput">
+				<span class="userNameInfo"></span>
+			</div>
+			<div class="sex">
+				<p>性 别</p>
+				<label>
+					<input type="radio" checked value="male" name="sex">&nbsp<i class="fa fa-mars"></i>
+				</label>
+				<label>
+					<input type="radio" value="female" name="sex">&nbsp<i class="fa fa-venus"></i>
+				</label>
+			</div>
+			<div class="choseHead">
+				<p>选择头像</p>
+				<div class="head">
+					<img src="images/4.jpg">
+				</div>
+				<div class="headList">
+					<div>
+						<img src="images/1.jpg">
+					</div>
+					<div>
+						<img src="images/2.jpg">
+					</div>
+					<div>
+						<img src="images/3.png">
+					</div>
+					<div>
+						<img src="images/4.jpg">
+					</div>
+					<div>
+						<img src="images/5.jpg">
+					</div>
+					<div>
+						<img src="images/6.jpg">
+					</div>
+					<div>
+						<img src="images/7.jpg">
+					</div>
+				</div>
+				<div class="sj">
+					<img src="images/sj.jpg">
+				</div>
+			</div>
+		</div>
+		<div class="loginFooter">
+				<a href="javascript:void(0)">Enter ! <i class="fa fa-thumbs-o-up"></i></a>
+		</div>
+	</div>
+	<!-- login- -end -->
+
+	<!-- 私聊窗口- -start -->
+	<div class="private">
+		<div class="privateHead">
+			<img src="">
+			<span></span>
+			<i class=""></i>
+			<i class="fa fa-close"></i>
+		</div>
+		<div class="privateMsgShow">
+			
+			<!-- ==================================== -->
+			<!-- <div>
+				<div class="privateItemWrap myMsg">
+					<div class="privateItemHead">
+						<img src="images/6.jpg">
+					</div>
+					<div class="privateItemBody">
+						<p>aaa<i class="fa fa-mars"></i></p>
+						<p>bbbbbbb</p>
+					</div>
+					<div class="privateItemInfo">
+						<p>21:22</p>
+						<i class='fa fa-ban delMessage'></i>
+					</div>
+				</div>
+			</div> -->
+			<!-- ==================================== -->
+
+		</div>
+		<div class="privateMsgInput">
+			<textarea placeholder="消息不能为空..." maxlength="150"></textarea>
+			<button>发 送</button>
+		</div>
+	</div>
+	<div id="privateMask"></div>
+	<!-- 私聊窗口- -end -->
+
+</body>
+</html>

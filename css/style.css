@@ -1,0 +1,586 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Microsoft Yahei";
+}
+html{height: 100%}
+body{
+	/*font-size: 14px;*/
+	background-image: url(../images/bg.jpg);
+	background-size: cover;
+	height: 100%;
+}
+
+
+.clear:after{
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	content: "";
+}
+
+#chatroom{
+	height: 100%;
+}
+
+/*遮罩层*/
+.onblur{
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+}
+
+/*男女图标*/
+.fa-mars{
+	font-size: 14px;
+	color: #00B7FF;
+}
+.fa-venus{
+	font-size: 14px;
+	color: #fc8c84;
+}
+
+/*aside start*/
+.aside{
+	background: rgba(0,0,0,0.4);
+	width: 100px;
+	height: 100%;
+	min-width: 100px;
+	float: left;
+}
+.aside .left-nav{
+	list-style: none;
+}
+
+.aside .left-nav li{
+	text-align: center;
+	font-size: 20px;
+	height: 80px;
+	line-height: 80px;
+	margin-top: 40px;
+}
+.aside .left-nav li:hover{
+	background: rgba(0 ,0, 0 ,0.5);
+	color: #fff;
+	cursor: pointer;
+}
+
+/*aside end*/
+
+/*onlineList start*/
+.onlineList{
+	/*display: none;*/
+	width: 0;
+	float: left;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+.onlineList .onlineNum{
+	white-space: nowrap;
+	display: block;
+	font-size: 14px;
+	height: 45px;
+	line-height: 45px;
+	color: #fff;
+	padding-left: 15px;
+	background: rgba(0,0,0,0.4);
+}
+.onlineList .onlineUser{
+	overflow: hidden;
+	list-style: none;
+}
+.onlineList .onlineUser div{
+	width: 250px;
+}
+.onlineList .onlineUser li{
+	float: left;
+	display: inline-block;
+	width: 60px;
+	margin:15px 10px;
+	text-align: center;
+}
+.onlineList .onlineUser li:nth-child(n+2):hover{
+	cursor:pointer;
+}
+.onlineList .onlineUser li img{
+	width: 100%;
+	border-radius: 50%;
+}
+.onlineList .onlineUser li span{
+	font-size: 14px;
+	color: #fff;
+}
+/*onlineList end*/
+
+/*Msg start*/
+.msgBox{
+	position: relative;
+	float: left;
+	width: 60%;
+	height: 100%;
+	background: #fff;
+}
+.msgBox .welcome{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	color: #fff;
+	font-size: 14px;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 25px;
+	margin:20px 0;
+	background: #292929;
+	display: none;
+}
+
+/*消息显示区msgShow*/
+.msgBox .msgShow{
+	overflow-y: scroll;
+	width: 100%;
+	height: 85%;
+	text-align: center;
+}
+
+.msgBox .msgShow .newFriendJoin{
+	padding:0 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/*width: 150px;*/
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	background: #ccc;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #fff;
+
+}
+
+.msgBox .msgShow .msgItem{
+	margin:2px 0;
+	text-align: left;
+	padding: 10px 40px 10px 20px;
+	transition: 0.3s;
+}
+.msgBox .msgShow .msgItem:hover{
+	background-color: #EEE;
+}
+.msgBox .msgShow .msgItem .userHead{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+.msgBox .msgShow .msgItem .userHead img{
+	width: 100%;
+	border-radius: 10px;
+}
+.msgBox .msgShow .msgItem .msg-content{
+	float: left;
+	margin:0 0 0 15px;
+	width: 75%;
+}
+.msgBox .msgShow .msgItem .msg-content h5{
+	font-family: 
+	font-size: 14px;
+	color: #707070;
+}
+.msgBox .msgShow .msgItem .msg-content p{
+	line-height: 25px;
+	font-size: 15px;
+	word-break: break-all;
+}
+
+.msgBox .msgShow .msgItem .tools{
+	float: right;
+	text-align: right;
+	color: #999;
+	font-size: 14px;
+}
+.msgBox .msgShow .msgItem .tools i{
+	font-size: 20px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.msgBox .msgShow .msgItem .tools i:hover{
+	color: red;
+}
+
+
+.msgBox .msgShow .myMsg{
+	background-color: #ffffe1;
+}
+
+.msgBox .msgInput{
+	overflow: hidden;
+	width: 100%;
+	height: 15%;
+	border-top:1px solid #ccc;
+}
+.msgBox .msgInput textarea{
+	float: left;
+	width: 75%;
+	height: 80%;
+	padding-top: 15px;
+	padding-left: 20px;
+	font-size: 16px;
+	color: #555555;
+	resize: none;
+	outline: none;
+	border:none;
+}
+.msgBox .msgInput #msgSend{
+	float: right;
+	width: 15%;
+	height: 100%;
+	font-size: 16px;
+	border:1px solid #fff;
+	transition: 0.2s;
+	cursor: pointer;
+	outline: none;
+}
+.msgBox .msgInput #msgSend:hover{
+	color: #fff;
+	background: #5cb85c;
+}
+/*Msg end*/
+
+/*未读消息显示区 start*/
+.newMsgList{
+	display: none;
+	height: 100%;
+	padding: 10px;
+	float: right;
+	width: 120px;
+}
+.newMsgList ul{
+	height: 100%;
+	list-style: none;
+}
+.newMsgList ul li{
+	margin-bottom: 10px;
+	height: 5%;
+	text-align: left;
+}
+.newMsgList ul li:nth-child(n+2):hover{
+	cursor: pointer;
+}
+
+.newMsgList ul li .privateMsgNum{
+	font-size: 12px;
+	padding: 2px;
+	margin-left: 5px;
+	display: inline-block;
+	height: 16px;
+	min-width: 16px;
+	line-height: 16px;
+	text-align: center;
+	background: blue;
+	border-radius: 50%;
+	color: #fff;
+}
+.newMsgList ul li div{
+	margin-right: 5px;
+	float: left;
+	height: 100%
+}
+.newMsgList ul li img{
+	height: 100%;
+}
+.newMsgList ul li p{
+	font-size: 14px;
+	width: 55px;
+	text-overflow:ellipsis;
+	overflow:hidden; 
+	white-space:nowrap;
+}
+/*未读消息显示区 end*/
+
+/*login start*/
+
+.login{
+	/*display: none;*/
+	position: absolute;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	/*transform: translate(-50%,-50%);*/
+	margin-left: -175px;
+	margin-top: -233px;
+	width: 350px;
+	height: 465px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #5F5F5F;
+}
+.login .loginHead{
+	/*display: inline-block;*/
+	border-top-left-radius:5px; 
+	border-top-right-radius:5px; 
+	background: #444;
+}
+.login .loginHead h2{
+	color: #fff;
+	line-height: 72px;
+	padding-left: 20px;
+	font-weight: normal;
+}
+
+.login .loginContent{
+	padding: 20px;
+}
+.login .loginContent p{
+	font-size: 16px;
+}
+.login .loginContent .username p{
+	margin-bottom: 15px;
+}
+.login .loginContent .username input{
+	border:1px solid #ccc;
+	padding-left: 10px;
+	border-radius: 3px;
+	outline: none;
+	width: 96%;
+	height: 37px;
+}
+.login .loginContent .username .userNameInfo{
+	float: right;
+	font-size: 14px;
+}
+
+.login .loginContent .sex{margin-top: 15px;}
+.login .loginContent .sex label{
+	display: inline-block;
+	padding: 15px 20px 0 0 ;
+}
+.login .loginContent .sex label i{
+	font-size: 18px;
+}
+
+.login .loginContent .choseHead{
+	margin-top: 15px;
+}
+.login .loginContent .choseHead .head{
+	margin-top: 15px;
+	width: 75px;
+	height: 75px;
+}
+.login .loginContent .choseHead .head img{
+	border:1px solid #fff;
+	border-radius: 5px;
+	width: 100%;
+}
+.login .loginContent .choseHead .head img:hover{
+	border:1px #2e6da4 solid;
+}
+
+.login .loginContent .choseHead .headList{
+	display: none;
+	position: absolute;
+	padding:5px 0;
+	margin-top: 15px;
+	width: 310px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #000;
+	background: #fff;
+}
+.login .loginContent .choseHead .headList div{
+	margin: 3px;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+}
+.login .loginContent .choseHead .headList div img{
+	width: 100%;
+	border:1px solid #fff;
+	border-radius: 3px;
+}
+.login .loginContent .choseHead .headList div img:hover{
+	border:1px #2e6da4 solid;
+}
+.login .loginContent .choseHead .sj{
+	display: none;
+	position: absolute;
+	left: 40px;
+}
+
+.login .loginFooter{
+	padding: 20px 20px 0 0;
+	height: 60px;
+	/*margin-top: 15px;*/
+	border-bottom-left-radius:5px; 
+	border-bottom-right-radius:5px; 
+	background: #444;
+}
+.login .loginFooter a{
+	float: right;
+	display: inline-block;
+	font-size: 18px;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 5px;
+	width: 150px;
+	height: 35px;
+	text-decoration: none;
+	color: #333;
+	background: #fff;
+	transition: 0.3s;
+}
+.login .loginFooter a:hover{
+	background: #5cb85c;
+	color: #fff;
+}
+/*login end*/
+
+/*mask start*/
+.mask{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+}
+/*mask end*/
+
+/*私聊窗口start*/
+.private{
+	z-index: 100;
+	position: fixed;
+	width: 60%;
+	height: 80%;
+	left:100%;
+	top: 100%;
+	transition: 1s;
+	border:1px solid #ccc;
+	background: #fff;
+	border-radius: 10px;
+}
+.private .privateHead{
+	position: relative;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 9%;
+	width: 100%;
+	background: #F8F8F8;
+	border-bottom: 1px solid #ddd;
+}
+.private .privateHead img{
+	position: absolute;
+	top: 10%;
+	height: 80%;
+	margin-left: 5px;
+	border-radius: 10px;
+}
+.private .privateHead span{
+	font-size: 18px;
+	left: 7%;
+	top: 50%;
+	position: absolute;
+}
+.private .privateHead .sex{
+	font-size: 18px;
+	left: 7%;
+	top: 25%;
+	position: absolute;
+}
+.private .privateHead .fa-close{
+	position: relative;
+	top: 20%;
+	right: 10px;
+	font-size: 20px;
+	float: right;
+}
+.private .privateHead .fa-close:hover{
+	color:red;
+}
+.private .privateMsgShow{
+	overflow-y: scroll;
+	padding: 10px;
+	height: 66%;
+	border-bottom: 1px solid #ddd;
+}
+.private .privateMsgShow>div{
+	height: 11%;
+	margin-bottom: 15px;
+}
+.private .privateMsgShow>div .privateItemWrap{
+	border-radius: 5px;
+	padding: 5px;
+	height: 100%;
+	background: #F8F8F8;
+}
+.private .privateMsgShow>div .myMsg{
+	background:#ffffe1 ;
+}
+.private .privateMsgShow>div .privateItemWrap:hover{
+	background:  #eee;
+}
+.private .privateMsgShow>div .privateItemWrap>div{
+	float: left;
+}
+.private .privateMsgShow>div .privateItemWrap .privateItemInfo{
+	float: right;
+	text-align: right;
+}
+.private .privateMsgShow>div .privateItemWrap .privateItemInfo i:hover{
+	color: red;
+	cursor: pointer;
+}
+.private .privateMsgShow>div .privateItemWrap .privateItemHead{
+	height: 100%;
+	margin-right: 10px;
+}
+.private .privateMsgShow>div .privateItemWrap .privateItemHead img{
+	height: 100%;
+}
+
+
+.private .privateMsgInput{
+	height: 18%;
+	padding: 10px;
+}
+.private .privateMsgInput textarea{
+	float: left;
+	width: 80%;
+	height: 100%;
+	font-size: 16px;
+	color: #555555;
+	resize: none;
+	outline: none;
+	border:none;
+}
+.private .privateMsgInput button{
+	float: right;
+	width: 15%;
+	height: 100%;
+	font-size: 16px;
+	border:1px solid #fff;
+	transition: 0.2s;
+	cursor: pointer;
+	outline: none;
+}
+.private .privateMsgInput button:hover{
+	color: #fff;
+	background: #5cb85c;
+}
+
+#privateMask{
+	display: none;
+	position: relative;
+	z-index: 99;
+	top:-100%;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+/*私聊窗口end*/
